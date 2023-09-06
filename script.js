@@ -1,13 +1,11 @@
 function hasDuplicates(arr) {
-    return new Set(arr).size !== arr.length;
+    let set = new Set(arr);
+    console.log('check:', set, set.size);
+    return set.size !== 10;
 }
 
 function numChecker(number) {
     if (number > 255 || number < 0) {
-        return false;
-    }
-    let array = [...number.toString()];
-    if (hasDuplicates(array)) {
         return false;
     }
     return true;
@@ -15,6 +13,7 @@ function numChecker(number) {
 
 function numbersCheck(a, b, c, d) {
     let str = a.toString() + b.toString() + c.toString() + d.toString();
+    console.log(str);
     return hasDuplicates(str.split(''));
 }
 
